@@ -1,0 +1,9 @@
+{
+  "uuid": "%uuid%",
+  "name": "AntiAFK",
+  "author": "Neocraftr",
+  "description": "Bypasses the GrieferGames afk system.",
+  "version": 1,
+  "category": 2,
+  "mainClass": "de.neocraftr.antiafk.AntiAFK"
+}
