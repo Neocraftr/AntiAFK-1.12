@@ -25,3 +25,9 @@ minecraft {
 
     mappings = "snapshot_20171003"
 }
+
+reobf {
+    jar {
+        useNotchSrg()
+    }
+}
