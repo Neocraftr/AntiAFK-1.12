@@ -18,19 +18,19 @@ public class TickListener {
 
     @SubscribeEvent
     public void onTick(TickEvent.PlayerTickEvent e) {
-        if(e.phase == TickEvent.Phase.START) {
+        if(e.phase == TickEvent.Phase.END) {
             EntityPlayerSP player = Minecraft.getMinecraft().player;
             Container cont = player.openContainer;
             if(cont instanceof ContainerChest) {
                 if(!afkMenuOpen) {
                     ContainerChest chest = ((ContainerChest) cont);
                     IInventory inv = chest.getLowerChestInventory();
-                    if(inv.getName().equals("§cAfk?")) {
+                    if(inv.getName().equalsIgnoreCase("§cAFK?")) {
                         afkMenuOpen = true;
                         new Timer().schedule(new TimerTask() {
                             @Override
                             public void run() {
-                                Minecraft.getMinecraft().playerController.windowClick(chest.windowId, 0,0, ClickType.PICKUP, player);
+                                Minecraft.getMinecraft().playerController.windowClick(chest.windowId, 0, 0, ClickType.PICKUP, player);
                             }
                         }, 1000);
                     }
